@@ -1,0 +1,503 @@
+:root {
+    --primaryColor : rgb(0, 85, 0);
+    --secondaryColor : rgb(0, 255, 136);
+    --gradiantPrimaryColor: 0, 85, 0;
+    --gradiantSecondaryColor: 0, 255, 136;
+    --gradiantThirdColor : 0, 150, 80;
+    --textColorDark: rgb(0, 85, 0);
+    --textColorWhite: white;
+    --normalFontSize : 20px;
+}
+
+body{
+    color : var(--primaryColor);
+    text-align: justify;
+}
+
+#navbar {
+    border-bottom: solid 2px var(--secondaryColor);
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#navbar.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.navbar a{
+    color : white;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.navbar a:hover{
+    color : var(--secondaryColor);
+}
+
+.navbar a.active {
+    text-decoration: underline;
+    font-weight: bold;
+    color: var(--secondaryColor) !important;
+}
+
+.personalHeader {
+    height: 700px;
+    position: relative;
+    background: url('../img/desk.png.jpg') center/cover no-repeat;
+}
+
+.personalHeader::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to left,
+        rgba(var(--gradiantSecondaryColor), 0.8),
+        rgba(var(--gradiantPrimaryColor), 0.8)
+    );
+    z-index: 1;
+}
+
+.personalHeader .container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: var(--textColorWhite);
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.title {
+    color : var(--textColorDark);
+    display: block;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.titleWhite{
+    color : white;
+    display: block;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    width: 30%;
+    height: 5px;
+    background-color: var(--secondaryColor);
+    transform: translateX(-50%);
+}
+
+.titleWhite::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    width: 30%;
+    height: 5px;
+    background-color: var(--secondaryColor);
+    transform: translateX(-50%);
+}
+
+/* ----- ABOUT ME -----*/
+
+.description {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--textColorDark);
+}
+
+.dashed-line {
+    width: 100%;
+    border-bottom: 2px dashed var(--primaryColor);
+    margin-top: 20px;
+}
+
+.coinsVerts {
+    position: relative;
+    padding-top : 1%;
+    padding-bottom : 1%;
+}
+
+.coinsVerts::before,
+.coinsVerts::after {
+    content: '';
+    position: absolute;
+    border: solid 5px var(--primaryColor);
+    width: 50px;
+    height: 50px;
+    background: transparent;
+}
+
+.coinsVerts::before {
+    top: 0;
+    right: 0;
+    border-left: none;
+    border-bottom: none;
+}
+
+.coinsVerts::after {
+    bottom: 0;
+    left: 0;
+    border-right: none;
+    border-top: none;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.image-container img {
+    max-width: 100%;
+    max-height: 400;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 15px;
+}
+
+.separator{
+    font-size: 14px;
+    color : var(--primaryColor);
+}
+
+.myInfos{
+    font-size : 18px;
+}
+
+.labelText{
+    font-weight: bold;
+}
+
+.btn-download {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primaryColor);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 40px;
+    border : 3.5px solid var(--primaryColor);
+}
+
+.btn-download:hover {
+    border-color: var(--secondaryColor);
+}
+
+/* ----- Skills ----- */
+
+.skills {
+    background: linear-gradient(
+        to right,
+        rgba(var(--gradiantPrimaryColor), 0.8),
+        rgba(var(--gradiantThirdColor), 0.8)
+    );
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.skill-item {
+    background-color: white;
+    color: var(--primaryColor);
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    opacity: 0.95;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+}
+
+.skill-logo {
+    display: block;
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.skill-item span {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.skills::before,
+.skills::after {
+    content: '';
+    position: absolute;
+    border: 5px solid var(--secondaryColor);
+    border-radius: 50%;
+    background: none;
+    z-index: 1;
+}
+
+.skills::before {
+    width: 150px;
+    height: 150px;
+    top: 20%;
+    left: 10%;
+}
+
+.skills::after {
+    width: 200px;
+    height: 200px;
+    bottom: 15%;
+    right: 20%;
+}
+
+.skills .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* ----- Soft Skills ----- */
+
+.softSkillBox{
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 40px;
+    border : 3.5px solid var(--primaryColor);
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 20px 0;
+}
+
+/* ----- Jobs ----- */
+
+.jobs{
+    background: linear-gradient(
+        to right,
+        rgba(var(--gradiantPrimaryColor), 0.8),
+        rgba(var(--gradiantThirdColor), 0.8)
+    );
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.jobs::before,
+.jobs::after {
+    content: '';
+    position: absolute;
+    border: 5px solid var(--secondaryColor);
+    border-radius: 50%;
+    background: none;
+    z-index: 1;
+}
+
+.jobs::before {
+    width: 150px;
+    height: 150px;
+    top: 10%;
+    left: 10%;
+}
+
+.jobs::after {
+    width: 200px;
+    height: 200px;
+    top: 60%;
+    right: 30%;
+}
+
+.jobs .container {
+    position: relative;
+    z-index: 2;
+}
+
+.job-box {
+    background-color: white;
+    border: 2px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0.95;
+}
+
+.job-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 20px;
+}
+
+.job-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--textColorDark);
+}
+
+.job-date-location {
+    font-size: 1.3rem;
+    font-weight: normal;
+    color: var(--textColorDark);
+    margin-bottom: 10px;
+}
+
+.job-date-location a{
+    color: var(--textColorDark);
+}
+
+.job-description {
+    font-size: var(--normalFontSize);
+    color: black;
+}
+
+.job-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.jobsSeparator{
+    width: 100%;
+    border-bottom: 2px dashed var(--secondaryColor);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* ----- Projects ----- */
+
+.project-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: white;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.project-box:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.project-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primaryColor);
+    margin-bottom: 10px;
+}
+
+.project-description {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: black;
+    line-height: 1.5;
+}
+
+.Hour-desc{
+    color : black !important;
+}
+
+.btn-more {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    background-color: var(--primaryColor);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-more:hover {
+    border : solid 3px var(--secondaryColor);
+    background-color : var(--primaryColor);
+    color : white;
+}
+
+/* ----- Footer ----- */
+
+.personalFooter {
+    background-color: #212529;
+    color: white;
+    padding: 20px 0;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.contact-info span{
+    margin-bottom : 10px;
+}
+
+.contact-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.contact-item i {
+    margin-right: 10px;
+}
+
+.link-contact {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: white;
+    color: var(--primaryColor);
+    text-align: center;
+    line-height: 35px;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.link-contact:hover{
+    background-color : var(--primaryColor);
+    border : solid 1px var(--secondaryColor);
+    color : white;
+}
